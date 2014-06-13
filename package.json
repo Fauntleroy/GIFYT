@@ -1,0 +1,27 @@
+{
+  "name": "GIFYT",
+  "version": "0.0.0",
+  "description": "Convert YouTube video segments to GIFs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Fauntleroy/GIFYT.git"
+  },
+  "keywords": [
+    "GIF",
+    "YouTube"
+  ],
+  "author": "Timothy Kempf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fauntleroy/GIFYT/issues"
+  },
+  "homepage": "https://github.com/Fauntleroy/GIFYT",
+  "dependencies": {
+    "gif-encoder": "^0.4.1",
+    "ytdl": "^0.2.8"
+  }
+}
