@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Fauntleroy/GIFYT",
   "dependencies": {
     "gif-encoder": "^0.4.1",
+    "gify": "^0.2.0",
     "ytdl": "^0.2.8"
   }
 }
