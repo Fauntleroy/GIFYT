@@ -1,13 +1,28 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requireClient=="function"&&requireClient;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof requireClient=="function"&&requireClient;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(requireClient,module,exports){
 var dom = requireClient('domquery');
 var domready = requireClient('domready');
+var forEach = Array.prototype.forEach;
+
+var getFormData = function( form ){
+    var form_data = {};
+    forEach.call( form.elements, function( el, i ){
+        switch( el.tagName ){
+            case 'INPUT':
+            case 'TEXTAREA':
+            case 'SELECT':
+                form_data[el.name] = el.value;
+            break;
+        }
+    });
+    return form_data;
+};
 
 domready( function(){
     var $form = dom('#configuration');
-
     $form.on( 'submit', function( event ){
         event.preventDefault();
-        console.log( arguments );
+        var form_data = getFormData( $form[0] );
+        console.log( 'form_data', form_data );
     });
 });
 
