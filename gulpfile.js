@@ -20,7 +20,11 @@ gulp.task( 'compile css', function(){
 });
 
 gulp.task( 'compile js', function(){
-	var w = watchify( JS_ENTRY_FILE );
+	var w = watchify({
+		entries: JS_ENTRY_FILE,
+		insertGlobals: false,
+		detectGlobals: false
+	});
 	w.transform('hbsfy');
 	//w.transform('browserify-shim');
 	var bundle = function(){
